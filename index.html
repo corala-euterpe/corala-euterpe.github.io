@@ -34,31 +34,31 @@
         }
 
         header {
-            background: linear-gradient(rgba(26, 26, 46, 0.6), rgba(26, 26, 46, 0.6)), url('https://scontent.fotp3-3.fna.fbcdn.net/v/t39.30808-6/577060796_1141210994667177_7082020217890381819_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=RkTR_9Hw8x0Q7kNvwGUMgqF&_nc_oc=AdnU-ZUvAP26LiKOsWyrvMA7zNgjhp_lFc6u93ulmkcNoCEJKXe-Jk7JqnW6KM0utFQ&_nc_zt=23&_nc_ht=scontent.fotp3-3.fna&_nc_gid=QywpJEdPVIolTitjBIEg3w&oh=00_AftsNNXO7MSn6EIWxVoN8nJu2yoIV0gZHw8HkcbsMYwadg&oe=69958BFA');
+            background: linear-gradient(rgba(26, 26, 46, 0.4), rgba(26, 26, 46, 0.4)), url('https://scontent.fotp3-3.fna.fbcdn.net/v/t39.30808-6/577060796_1141210994667177_7082020217890381819_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=RkTR_9Hw8x0Q7kNvwGUMgqF&_nc_oc=AdnU-ZUvAP26LiKOsWyrvMA7zNgjhp_lFc6u93ulmkcNoCEJKXe-Jk7JqnW6KM0utFQ&_nc_zt=23&_nc_ht=scontent.fotp3-3.fna&_nc_gid=QywpJEdPVIolTitjBIEg3w&oh=00_AftsNNXO7MSn6EIWxVoN8nJu2yoIV0gZHw8HkcbsMYwadg&oe=69958BFA');
             background-size: cover;
             background-position: center 30%;
-            height: 80vh;
+            height: 90vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Aliniere la început */
             align-items: center;
             text-align: center;
             color: var(--text-light);
-            padding: 20px;
+            padding: 10vh 20px; /* 10vh push down to be around 20% of screen */
         }
 
         header h1 {
             font-size: 3.5rem;
             margin-bottom: 10px;
             letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
         }
 
         header p {
             font-size: 1.5rem;
             font-style: italic;
             margin-bottom: 20px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
         }
 
         .motto {
@@ -67,7 +67,7 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 3px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
         }
 
         nav {
@@ -271,7 +271,7 @@
         <h2>Alătură-te nouă!</h2>
         <p>Dacă muzica este felul tău de a simți și de a dărui emoție, vino alături de noi!</p>
         <p>Nu trebuie să fii profesionistă — ci doar să iubești muzica și să îți dorești să faci parte dintr-un colectiv cald și unit.</p>
-        <a href="mailto:[email]" class="cta-button">Trimite-ne un mesaj</a>
+        <a href="mailto:euterpecorala@gmail.com" class="cta-button">Trimite-ne un mesaj</a>
     </section>
 
     <section id="sustine" class="centered">
@@ -291,6 +291,7 @@
 
     <footer>
         <p>&copy; 2026 Corala Euterpe. Toate drepturile rezervate.</p>
+        <p style="margin-top: 10px;">Email: <a href="mailto:euterpecorala@gmail.com" style="color: var(--gold); text-decoration: none;">euterpecorala@gmail.com</a></p>
         <div class="social-links" style="margin-top: 20px;">
             Facebook | YouTube | Instagram | SoundCloud
         </div>

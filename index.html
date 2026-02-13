@@ -33,43 +33,56 @@
             font-family: 'Playfair Display', serif;
         }
 
-        header {
-            background: linear-gradient(rgba(26, 26, 46, 0.4), rgba(26, 26, 46, 0.4)), url('https://scontent.fotp3-3.fna.fbcdn.net/v/t39.30808-6/577060796_1141210994667177_7082020217890381819_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=RkTR_9Hw8x0Q7kNvwGUMgqF&_nc_oc=AdnU-ZUvAP26LiKOsWyrvMA7zNgjhp_lFc6u93ulmkcNoCEJKXe-Jk7JqnW6KM0utFQ&_nc_zt=23&_nc_ht=scontent.fotp3-3.fna&_nc_gid=QywpJEdPVIolTitjBIEg3w&oh=00_AftsNNXO7MSn6EIWxVoN8nJu2yoIV0gZHw8HkcbsMYwadg&oe=69958BFA');
-            background-size: cover;
-            background-position: center 30%;
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+        /* --- HEADER DINAMIC --- */
+        .hero-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-color: var(--primary-dark);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(0.7);
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 20%; /* 20% fata de top, conform cerintei anterioare */
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 90%;
             text-align: center;
             color: var(--text-light);
-            padding: 10vh 20px;
+            z-index: 10;
         }
 
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
+        .hero-content h1 {
+            font-size: clamp(1.5rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
             letter-spacing: 2px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
         }
 
-        header p {
-            font-size: 1.5rem;
+        .hero-content p {
+            font-size: clamp(0.9rem, 2.5vw, 1.5rem);
             font-style: italic;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.9);
         }
 
         .motto {
             color: var(--gold);
-            font-size: 1.2rem;
+            font-size: clamp(0.7rem, 2vw, 1.2rem);
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 3px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
         }
 
+        /* --- NAVIGARE --- */
         nav {
             background-color: var(--primary-dark);
             padding: 1rem;
@@ -101,8 +114,9 @@
             color: var(--gold);
         }
 
+        /* --- SECTIUNI --- */
         section {
-            padding: 80px 20px;
+            padding: 60px 20px;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -112,16 +126,16 @@
         }
 
         .intro-text {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
         }
 
         .quote {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-style: italic;
             color: var(--accent);
-            margin: 40px 0;
+            margin: 30px 0;
             padding: 20px;
             border-top: 1px solid #ddd;
             border-bottom: 1px solid #ddd;
@@ -134,13 +148,13 @@
         .conductors {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .conductor-card {
             background: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-top: 4px solid var(--accent);
@@ -148,27 +162,20 @@
 
         .conductor-card h3 {
             color: var(--accent);
-            margin-bottom: 10px;
-        }
-
-        .conductor-card .years {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 15px;
-            color: #666;
+            margin-bottom: 8px;
         }
 
         footer {
             background-color: var(--primary-dark);
             color: var(--text-light);
-            padding: 60px 20px;
+            padding: 50px 20px;
             text-align: center;
         }
 
         .social-links a {
             color: var(--text-light);
-            font-size: 1.1rem;
-            margin: 0 15px;
+            font-size: 1rem;
+            margin: 0 12px;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -181,7 +188,7 @@
             display: inline-block;
             background-color: var(--accent);
             color: white;
-            padding: 15px 30px;
+            padding: 12px 25px;
             text-decoration: none;
             border-radius: 30px;
             font-weight: bold;
@@ -192,28 +199,18 @@
         .cta-button:hover {
             transform: scale(1.05);
         }
-
-        @media (max-width: 768px) {
-            header {
-                height: 50vh; /* Ajustare înălțime pe mobil */
-                background-size: contain; /* Vedem toată imaginea pe lățime */
-                background-repeat: no-repeat;
-                background-color: var(--primary-dark);
-                padding: 5vh 10px;
-            }
-            header h1 { font-size: 1.8rem; }
-            header p { font-size: 1rem; }
-            .motto { font-size: 0.8rem; letter-spacing: 1px; }
-        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Corala Euterpe</h1>
-        <p>35 de ani de armonie, prietenie și emoție</p>
-        <div class="motto">Când vocile se unesc, bucuria prinde glas</div>
-    </header>
+    <div class="hero-container">
+        <img src="https://scontent.fotp3-3.fna.fbcdn.net/v/t39.30808-6/577060796_1141210994667177_7082020217890381819_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=RkTR_9Hw8x0Q7kNvwGUMgqF&_nc_oc=AdnU-ZUvAP26LiKOsWyrvMA7zNgjhp_lFc6u93ulmkcNoCEJKXe-Jk7JqnW6KM0utFQ&_nc_zt=23&_nc_ht=scontent.fotp3-3.fna&_nc_gid=QywpJEdPVIolTitjBIEg3w&oh=00_AftsNNXO7MSn6EIWxVoN8nJu2yoIV0gZHw8HkcbsMYwadg&oe=69958BFA" alt="Corala Euterpe" class="hero-image">
+        <div class="hero-content">
+            <h1>Corala Euterpe</h1>
+            <p>35 de ani de armonie, prietenie și emoție</p>
+            <div class="motto">Când vocile se unesc, bucuria prinde glas</div>
+        </div>
+    </div>
 
     <nav>
         <ul>
@@ -231,7 +228,6 @@
         <div class="intro-text">
             <p>Bine ai venit în lumea Coralei Euterpe, unde vocile noastre spun povești, iar armonia ne leagă de peste 35 de ani.</p>
             <p>Suntem un cor de voci egale, unite prin iubirea pentru muzică, prietenie și dorința de a transforma fiecare acord într-o emoție sinceră.</p>
-            <p>De la repetițiile pline de energie la concertele care ating inimile publicului, fiecare zi alături de Euterpe este un pas spre ceva mai frumos, mai intens, mai plin de suflet.</p>
         </div>
         <div class="quote">
             🎵 „Muzica nu este doar sunet – este limbajul sufletului nostru.”
@@ -240,10 +236,8 @@
 
     <section id="despre" class="history">
         <h2 class="centered">O poveste scrisă pe portativ</h2>
-        <p>Corala Euterpe s-a născut în anul 1990, sub bagheta doamnei prof. Georgeta Aldea, la Liceul Pedagogic din București (astăzi Colegiul Național Elena Cuza).</p>
-        <p>La început, eram un cor mare de fete – 50-60 de voci tinere care descopereau împreună frumusețea muzicii.</p>
-        <p>Anii au trecut, dar legătura dintre noi a rămas. Dintr-un cor școlar, ne-am transformat într-o asociație corală independentă, deschisă femeilor din toate domeniile, dar unite prin aceeași pasiune: cântul.</p>
-        <p>Astăzi, Corala Euterpe este o familie muzicală în care trecutul și prezentul se împletesc în armonie. Muzica ne-a fost mereu acasă.</p>
+        <p>Corala Euterpe s-a născut în anul 1990, sub bagheta doamnei prof. Georgeta Aldea, la Liceul Pedagogic din București.</p>
+        <p>Anii au trecut, dar legătura dintre noi a rămas. Dintr-un cor școlar, ne-am transformat într-o asociație corală independentă, unită prin aceeași pasiune: cântul.</p>
     </section>
 
     <section id="dirijori">
@@ -251,65 +245,28 @@
         <div class="conductors">
             <div class="conductor-card">
                 <h3>Prof. Georgeta Aldea</h3>
-                <span class="years">1990 – 2021</span>
-                <p>Sufletul fondator al corului, doamna Aldea a modelat nu doar vocile noastre, ci și spiritul Euterpe. Ne-a învățat că muzica este emoție, respirație comună și prietenie.</p>
+                <p>1990 – 2021</p>
+                <p>Sufletul fondator al corului, doamna Aldea a modelat spiritul Euterpe.</p>
             </div>
             <div class="conductor-card">
                 <h3>Victor Stoica</h3>
-                <span class="years">2021 – 2022</span>
-                <p>A condus corala într-o perioadă de tranziție, aducând prospețime repertoriului și conducând concerte pline de emoție în biserici din București.</p>
+                <p>2021 – 2022</p>
+                <p>A adus prospețime repertoriului într-o perioadă de tranziție.</p>
             </div>
             <div class="conductor-card">
                 <h3>Heliana Tudor & Grigore Miron</h3>
-                <span class="years">2023 – Prezent</span>
-                <p>Sub bagheta lor atentă, corul a renăscut cu un suflu nou, redescoperind echilibrul dintre tehnică și expresivitate la fiecare repetiție.</p>
+                <p>2023 – Prezent</p>
+                <p>Redescoperirea echilibrului dintre tehnică și expresivitate.</p>
             </div>
         </div>
     </section>
 
-    <section id="proiecte" class="centered">
-        <h2>Activitate și Proiecte</h2>
-        <p>În fiecare an, vocile noastre aduc lumină în biserici ortodoxe și catolice din București, prin concerte de Crăciun și Paști.</p>
-        <div class="intro-text" style="text-align: left; max-width: 600px; margin: 30px auto;">
-            <ul>
-                <li>Perfecționarea interpretării și diversificarea repertoriului.</li>
-                <li>Participarea la competiții internaționale.</li>
-                <li>Crearea de colaborări cu artiști și ansambluri.</li>
-                <li>Proiectul aniversar „30 de ani de Euterpe”.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="alatura-te" class="centered history">
-        <h2>Alătură-te nouă!</h2>
-        <p>Dacă muzica este felul tău de a simți și de a dărui emoție, vino alături de noi!</p>
-        <p>Nu trebuie să fii profesionistă — ci doar să iubești muzica și să îți dorești să faci parte dintr-un colectiv cald și unit.</p>
-        <a href="mailto:euterpecorala@gmail.com" class="cta-button">Trimite-ne un mesaj</a>
-    </section>
-
-    <section id="sustine" class="centered">
-        <h2>Susține Euterpe</h2>
-        <p>Muzica noastră trăiește prin oameni ca tine. Orice gest contează și ne ajută să ducem mai departe tradiția corală feminină.</p>
-        <div class="conductors">
-            <div class="conductor-card" style="border-top-color: var(--gold);">
-                <h3>Redirecționează 3,5%</h3>
-                <p>Completează formularul ANAF pentru a susține asociația noastră.</p>
-            </div>
-            <div class="conductor-card" style="border-top-color: var(--gold);">
-                <h3>Donații</h3>
-                <p>Sprijină-ne activitatea prin donații directe.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
+    <footer id="contact">
         <p>&copy; 2026 Corala Euterpe. Toate drepturile rezervate.</p>
-        <p style="margin-top: 10px;">Email: <a href="mailto:euterpecorala@gmail.com" style="color: var(--gold); text-decoration: none;">euterpecorala@gmail.com</a></p>
-        <div class="social-links" style="margin-top: 20px;">
+        <p style="margin: 10px 0;">Email: <a href="mailto:euterpecorala@gmail.com" style="color: var(--gold); text-decoration: none;">euterpecorala@gmail.com</a></p>
+        <div class="social-links">
             <a href="https://www.facebook.com/profile.php?id=61583438855074" target="_blank">Facebook</a>
             <a href="https://www.youtube.com/@coralaeuterpe3965" target="_blank">YouTube</a>
-            <span>Instagram</span>
-            <span>SoundCloud</span>
         </div>
     </footer>
 
